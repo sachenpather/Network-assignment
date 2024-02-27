@@ -41,9 +41,11 @@ def temp(client):
         splitMessage = clientsMessage.split(",")
         if(splitMessage[0] == "G"):
             groupMessage(splitMessage[1])
-        else:
+        elif(splitMessage[0] == "P"):
             clientIndex = clientNames.index(splitMessage[0])
-            client.send((str(clientIP[clientIndex]) + "," + str(clientPorts[clientIndex])).encode())
+            client.send(("123123," + clientIP[clientIndex][0] + "," + str(clientPorts[clientIndex])).encode())
+            clientsMessage = ""
+            
         
 
 def groupMessage(message):
